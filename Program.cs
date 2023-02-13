@@ -84,14 +84,14 @@ double [] createArrayDouble(int sign)//создание double массивов 
     return rndArray;
 }
 
-void resArray(int[] test1 )
+void resArray(int[] array34 )
 {   
-    showArrayMetodInt(test1);//показываем массив
+    showArrayMetodInt(array34);//показываем массив
 
     int count = 0 ;
-    for (int i = 0 ; i <test1.Length;i++)
+    for (int i = 0 ; i <array34.Length;i++)
     {
-            if (test1[i]%2==0)//проверка на четность числа если прошло то прибавляем счетчик
+            if (array34[i]%2==0)//проверка на четность числа если прошло то прибавляем счетчик
             {
                 ++count;
             }
@@ -105,15 +105,15 @@ void resArray(int[] test1 )
 
 // [-4, -6, 89, 6] -> 0
 
-void nechNum(int [] testArray)
+void nechNum(int [] array36)
 {
-    showArrayMetodInt(testArray);//показываем массив
+    showArrayMetodInt(array36);//показываем массив
     int Res = 0;
-    for (int i = 0 ; i<testArray.Length;i++)
+    for (int i = 0 ; i<array36.Length;i++)
     {
         if (i%2!=0)//проверка на нечетность нидекса
         {
-        Res=testArray[i]+Res;
+        Res=array36[i]+Res;
         }
     }
     System.Console.WriteLine($"сумма эл на нечетных идексах {Res}");
@@ -125,22 +125,22 @@ void nechNum(int [] testArray)
 // double [] h = createArrayDouble();
 // showArrayMetodDouble(h);
 
-void minMaxInArray(double[] array)
+void minMaxInArray(double[] array38)
 {
-    showArrayMetodDouble(array);
+    showArrayMetodDouble(array38);
     
-    double max = array[0];
-    double min = array[0];
+    double max = array38[0];
+    double min = array38[0];
 
-    for (int i = 1; i<array.Length;i++)
+    for (int i = 1; i<array38.Length;i++)
     {
-        if(array[i]>max)
+        if(array38[i]>max)
         {
-            max = array[i];
+            max = array38[i];
         }
-        else if (array[i]<min)
+        else if (array38[i]<min)
         {
-            min = array[i];
+            min = array38[i];
         }
     } 
     double Resulte = max - min;
