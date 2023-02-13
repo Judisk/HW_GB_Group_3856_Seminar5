@@ -5,28 +5,38 @@ void TaskNum(int number)
 {
     System.Console.WriteLine($"__Задание {number}___");
 }
-// TaskNum(34);
+
 
 int[] createArray(double degree, int maxSizeArray)
 {
-    
+    var rnd = new Random();
+    if (degree!=0 && maxSizeArray!=0)
+    {
     double maxDegreeDouble = Math.Pow(10,degree);
     int maxDegree = Convert.ToInt32(maxDegreeDouble);
     int minDegree = maxDegree/10;
-    int sizeArray = new Random().Next(1,maxSizeArray);
+    int sizeArray = rnd.Next(1,maxSizeArray);
     int [] rndArray = new int [sizeArray];
     for (int i = 0; i<sizeArray; i++)
     {
-        rndArray[i] = new Random().Next(minDegree,maxDegree); 
+        rndArray[i] = rnd.Next(minDegree,maxDegree); 
     }
     return rndArray;
+    }
+    else
+    {
+        int [] rndArray = new int [10];
+        for (int i = 0; i<10; i++)
+        {
+            rndArray[i] = rnd.Next(0,1000); 
+        }
+        return rndArray;
+    }
 }
 
 int resArray(int[] test1 )
 {   
-    int [ ] testArray = test1;
-    var str = string.Join(",", testArray);
-    Console.WriteLine(str);
+    showArraymetod(test1);
     int checkRes=0;
     int count = 0 ;
     for (int i = 0 ; i <test1.Length;i++)
@@ -45,15 +55,35 @@ int resArray(int[] test1 )
     return count;
 }
 
-
-System.Console.WriteLine(resArray(createArray(3,10)));
-
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
 // [3, 7, 23, 12] -> 19
 
 // [-4, -6, 89, 6] -> 0
 
-// TaskNum(36);
 
-// int 
+
+int nechNum(int [] testArray)
+{
+    showArraymetod(testArray);
+    int Res = 0;
+    for (int i = 0 ; i<testArray.Length;i++)
+    {
+        if (i%2!=0)
+        {
+        Res=testArray[i]+Res;
+        }
+    }
+    return Res;
+}
+void showArraymetod (int [] testArray)
+{
+    int [ ] showArray = testArray;
+    var str = string.Join(",", showArray);
+    Console.WriteLine(str);
+}
+TaskNum(34);
+System.Console.WriteLine(resArray(createArray(3,10)));
+
+TaskNum(36);
+System.Console.WriteLine(nechNum(createArray(0,0)));
